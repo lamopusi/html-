@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="./font_4823710_frga9ze6vie/iconfont.css">
+    <!-- font-class引用 -->
+
+    <!-- 提前说明:若想切换图片需要用js写代码实现(相当于后端写代码支撑) -->
+     <!-- 该练习也算是衔接前端和后端的第一个实例 -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        .banner{
+            position: relative;
+            margin: 100px auto;
+            width: 564px;
+            height: 315px;
+            overflow: hidden;
+            /* 溢出隐藏 */
+        }
+
+        .banner img{
+            width: 564px;
+            border-radius: 10px;
+            vertical-align: middle;
+            /* 居中对齐(之间不会留空隙/鸡线) */
+        }
+
+        .banner ul{
+            display: flex;
+        }
+
+        .banner .prev,
+        .banner .next{
+            display: none;
+            /* 隐藏 */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0,0,0,0.3);
+            /* rgba:半透明,0.3:透明度 */
+            text-decoration: none;
+            color: #fff;
+            line-height: 30px;
+        }
+
+        /* 鼠标滑到banner区域,箭头要显示 display:block */
+        .banner:hover .prev,
+        .banner:hover .next{
+            display: block;
+        }
+
+        .banner .prev{
+            left: 0;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .banner .next{
+            right: 0;
+            border-radius: 15px 0 0 15px;
+            text-align: center;
+        }
+
+        .banner ol{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 13px;
+            background-color: rgba(255,255,255,0.3);
+            display: flex;
+
+            border-radius: 10px;
+        }
+
+        .banner ol li{
+            margin: 3px;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* 橙色的小圆点(小li) */
+        .banner ol .active{
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <!-- 图:ul>li(ul嵌套li) -->
+    <ul>
+        <li><a href=""><img src="https://www.bing.com/th/id/OGC.a2258de080045b9e0ea0a02ca9d0ac4b?pid=1.7&rurl=https%3a%2f%2fimg95.699pic.com%2fphoto%2f40141%2f9611.gif_wh300.gif&ehk=v4E0j75zJT3Ls5%2fTkbhCW5N1hYqyJLlOdH61x52XUDY%3d" alt=""></a></li>
+        <li><a href=""><img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.-DitZv-aIz8yP8Rts2cYOwHaEK?w=293&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt=""></a></li>
+        <li><a href=""><img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.c98Iv8-gNaPsfYpucvsPNQAAAA?w=216&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt=""></a></li>
+    </ul>
+    <!-- 箭头 -->
+     <a href="" class="prev">
+        <i class="iconfont icon-zuoce"></i>
+     </a>
+     <!-- 上一张:prev -->
+     <a href="" class="next">
+        <i class="iconfont icon-youce"></i>
+     </a>
+     <!-- 下一张:next -->
+      <ol>
+        <li></li>
+        <li class="active"></li>
+        <li></li>
+      </ol>
+      <!-- 圆点 -->
+</div>
+</body>
+</html>
